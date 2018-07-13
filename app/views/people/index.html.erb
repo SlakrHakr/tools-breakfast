@@ -1,0 +1,10 @@
+<h1>The Breakfast Club</h1>
+<a href="https://www.youtube.com/watch?v=04854XqcfCY">Club Theme Song</a>
+
+<p>
+  <ul class="no-style">
+    <% @people.each do |person| %>
+      <li class="<%= 'current' if person.id == @current.id %>"><%= person.name %></li>
+    <% end %>
+  </ul>
+</p>

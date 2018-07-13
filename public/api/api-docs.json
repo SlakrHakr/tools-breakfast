@@ -1,0 +1,129 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "description": "This is a service that tells the breakfast club who's turn it is to bring breakfast each week",
+      "version": "1.0.0",
+      "title": "The Breakfast Club",
+      "contact": {
+         "email": "leedeboom@gmail.com"
+      }
+   },
+   "host": "tools-breakfast.herokuapp.com",
+   "basePath": "/",
+   "tags": [
+      {
+         "name": "people",
+         "description": ""
+      }
+   ],
+   "schemes": [
+      "https"
+   ],
+   "paths": {
+      "/people": {
+         "get": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Fetches all breakfasters",
+            "responses": {
+               "200": {
+                  "description": "Ok"
+               }
+            }
+         },
+         "post": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Create a breakfaster",
+            "responses": {
+               "200": {
+                  "description": "Ok"
+               }
+            }
+         }
+      },
+      "/people/{id}": {
+         "patch": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Update a breakfaster",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "type": "integer"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "Ok"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Delete a breakfaster",
+            "parameters": [
+               {
+                  "name": "id",
+                  "in": "path",
+                  "required": true,
+                  "type": "integer"
+               }
+            ],
+            "responses": {
+               "204": {
+                  "description": "No Content"
+               }
+            }
+         }
+      },
+      "/people/next": {
+         "post": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Transition to next breakfaster",
+            "responses": {
+               "204": {
+                  "description": "No Content"
+               }
+            }
+         }
+      },
+      "/people/pass": {
+         "post": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Pass the current breakfaster",
+            "description": "This person will then be eligible again the next week",
+            "responses": {
+               "200": {
+                  "description": "Ok"
+               }
+            }
+         }
+      },
+      "/people/notify": {
+         "post": {
+            "tags": [
+               "people"
+            ],
+            "summary": "Notify the club of the chosen breakfast bringer for the week",
+            "description": "This person is then contractually obligated to bring breakfast the following morn'",
+            "responses": {
+               "204": {
+                  "description": "No Content"
+               }
+            }
+         }
+      }
+   }
+}

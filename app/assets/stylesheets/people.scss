@@ -1,0 +1,25 @@
+// Place all the styles related to the People controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: arial;
+}
+
+ul.no-style {
+  list-style: none;
+  max-width: 400px;
+}
+
+li {
+  padding: 20px;
+}
+
+li.current {
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  background-image: image-url("raptor.png");
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
